@@ -23,8 +23,6 @@ class FirstAlgorithmOnQuantitiveAnalysis(QCAlgorithm):
         sortedByPEnROE = sorted(fine,key = lambda x: x.ValuationRatios.PERatio and (x.ValuationRatios.ForwardROE > 15 and x.ValuationRatios.ForwardROE < 20), reverse=True) 
         return [x.Symbol for x in sortedByPEnROE[:5]]
 
-
-
     def OnData(self, data: Slice):
        
        self.Log(self.Time)
